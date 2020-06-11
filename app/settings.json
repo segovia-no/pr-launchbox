@@ -1,0 +1,15 @@
+{
+    "appname": "Pr-lunch",
+    "appport": "0",
+    "mode": "browser",
+    "window": {
+        "title": "Pr-lunch",
+        "width": "1000",
+        "height": "700",
+        "fullscreen": false,
+        "alwaysontop": false,
+        "iconfile": "neutralino.png",
+        "enableinspector": false,
+        "borderlesswindow": false
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Pr-lunch</title>
+
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/app.css">
+
+  </head>
+  <body>
+    
+
+    <div id='app' class="container">
+
+      <div class="row apptitlecontainer">
+        <h1>{{title}}</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-4">
+
+          <p class="sectionTitle">Port selection</p>
+
+        </div>
+
+        <div class="col-sm-4">
+
+          <p class="sectionTitle">WAD selection</p>
+
+          <select v-model="selectedwad" class="custom-select">
+
+            <option v-for="wad in wads" v-bind:value="wad.name">
+              {{ wad.name }}
+            </option>
+
+          </select>
+          
+        </div>
+
+        <div class="col-sm-4">
+
+          <p class="sectionTitle">Options</p>
+          
+        </div>
+
+      </div>
+
+      <div class="row apptitle">
+        <button @click="launchPR()" type="button" class="btn btn-success">Launch Pr-Boom</button>
+      </div>
+
+    </div>
+
+
+    <script src="/neutralino.js"></script>
+    <script src="./assets/vue.min.js"></script>
+    <script src="/assets/app.js"></script>
+
+  </body>
+</html>
