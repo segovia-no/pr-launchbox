@@ -20,6 +20,11 @@ usage.txt
 node_modules
 .log
 
+#executables
+!neutralino-linux
+!neutralino-mac
+!neutralino-win.exe
+
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos
 
