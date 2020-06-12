@@ -1,11 +1,11 @@
 {
-    "appname": "Pr-lunch",
+    "appname": "Pr-lunchbox",
     "appport": "0",
-    "mode": "browser",
+    "mode": "window",
     "window": {
-        "title": "Pr-lunch",
-        "width": "1000",
-        "height": "700",
+        "title": "Pr-lunchbox",
+        "width": "700",
+        "height": "380",
         "fullscreen": false,
         "alwaysontop": false,
         "iconfile": "neutralino.png",

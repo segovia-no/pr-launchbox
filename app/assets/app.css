@@ -3,14 +3,26 @@ body {
     color: #eee;
 }
 
+#maincontainer{
+    padding: 15px;
+}
+
 .apptitlecontainer > h1 {
     font-size: 30px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .sectionTitle {
     font-size: 18px;
     border-left: 5px solid #f39c12;
     padding-left: 7px;
+}
+
+.wadselector {
+    height: 200px !important;
+}
+
+.launchButton {
+    margin-top: 15px;
 }

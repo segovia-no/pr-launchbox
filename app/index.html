@@ -3,7 +3,7 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>Pr-lunch</title>
+    <title>Pr-lunchbox</title>
 
     <link rel="stylesheet" href="/assets/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/app.css">
@@ -12,46 +12,92 @@
   <body>
     
 
-    <div id='app' class="container">
+    <div id='app' class="container-fluid">
+      <div id="maincontainer">
 
-      <div class="row apptitlecontainer">
-        <h1>{{title}}</h1>
-      </div>
+        <div class="row apptitlecontainer">
+          <h1>{{title}}</h1>
+        </div>
 
-      <div class="row">
+        <div class="row">
 
-        <div class="col-sm-4">
+          <div class="col-sm-4">
 
-          <p class="sectionTitle">Port selection</p>
+            <p class="sectionTitle">WAD selection</p>
+
+            <div class="form-check">
+              <input type="radio" id="doomradio" value="doom.wad" v-model="selectedIwad" class="form-check-input">
+              <label for="doomradio" class="form-check-label">DOOM I</label>
+            </div>
+
+            <div class="form-check">
+              <input type="radio" id="doom2radio" value="doom2.wad" v-model="selectedIwad" class="form-check-input">
+              <label for="doom2radio" class="form-check-label">DOOM II</label>
+            </div>
+
+            <select multiple v-model="selectedwad" class="custom-select custom-select-sm wadselector">
+
+              <option v-for="wad in wads" v-bind:value="wad.name">
+                {{ wad.name }}
+              </option>
+
+            </select>
+            
+          </div>
+
+          <div class="col-sm-4">
+
+            <p class="sectionTitle">Options</p>
+
+            <div class="input-group input-group-sm mb-3">
+
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="skillSelector">Skill</label>
+              </div>
+
+              <select v-model="selectedskill" class="custom-select custom-select-sm" id="skillSelector">
+
+                <option v-for="skill in skills" v-bind:value="skill">
+                  {{ skill }}
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Compat Level</span>
+              </div>
+              <input type="number" v-model="compatlevel" min="0" max="17" step="1" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <input type="checkbox" id="fastCheckbox" v-model="fastmonsters">
+            <label for="fastCheckbox">Fast monsters</label>
+            
+          </div>
+
+          <div class="col-sm-4">
+
+            <p class="sectionTitle">Port selection</p>
+
+            <div class="form-check">
+              <input type="radio" id="prboomradio" value="prboom-plus.exe" v-model="selectedport" class="form-check-input">
+              <label for="prboomradio" class="form-check-label">PrBoom Plus</label>
+            </div>
+
+            <div class="form-check">
+              <input type="radio" id="glboomradio" value="glboom-plus.exe" v-model="selectedport" class="form-check-input">
+              <label for="glboomradio" class="form-check-label">GlBoom Plus</label>
+            </div>
+
+            <button @click="launchPR()" :disabled="!selectedIwad || !selectedskill" type="button" class="btn launchButton" :class="(!selectedIwad || !selectedskill) ? 'btn-secondary' : 'btn-success'">Launch Pr-Boom</button>
+
+          </div>
 
         </div>
 
-        <div class="col-sm-4">
-
-          <p class="sectionTitle">WAD selection</p>
-
-          <select v-model="selectedwad" class="custom-select">
-
-            <option v-for="wad in wads" v-bind:value="wad.name">
-              {{ wad.name }}
-            </option>
-
-          </select>
-          
-        </div>
-
-        <div class="col-sm-4">
-
-          <p class="sectionTitle">Options</p>
-          
-        </div>
-
       </div>
-
-      <div class="row apptitle">
-        <button @click="launchPR()" type="button" class="btn btn-success">Launch Pr-Boom</button>
-      </div>
-
     </div>
 
 
